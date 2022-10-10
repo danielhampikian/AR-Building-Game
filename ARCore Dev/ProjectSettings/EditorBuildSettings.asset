@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Image Test.unity
     guid: 8ef11edd6ff2e144eb762a9a5703a5d8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Start.unity
     guid: af74ef6e738424b44a0e2a57b0050b1f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameLoop.unity
     guid: 32cb19700da3b61498ac11b4846d25cc
+  - enabled: 1
+    path: Assets/Scenes/Brady's scene.unity
+    guid: 53cb46f02fb5aee48b7a942d782a2f82
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: b4eaeab16bb52fd4e93806e4ddc59f15
   m_configObjects:
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 97244299f80739843859ea90ebc3bacb,
       type: 2}
