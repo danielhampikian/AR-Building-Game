@@ -7,7 +7,6 @@ public class GenerateMesh : MonoBehaviour
 {
 
     Mesh mesh;
-    public Material buildingMaterial;
 
     Vector3[] vertices;
     int[] triangles;
@@ -63,21 +62,9 @@ public class GenerateMesh : MonoBehaviour
 
     void UpdateMesh() {
         mesh.Clear();
-        
-        Material initalMaterial = GetComponent<Renderer>().material;
+
         mesh.vertices = vertices;
         mesh.triangles = triangles;
-
-        Vector2[] uvs = new Vector2[vertices.Length];
-
-        for (int i = 0; i < uvs.Length; i++)
-        {
-            uvs[i] = new Vector2(vertices[i].x, vertices[i].z);
-        }
-
-        mesh.uv = uvs;
-        initalMaterial = buildingMaterial;
-        
     }
 
     void Update() {

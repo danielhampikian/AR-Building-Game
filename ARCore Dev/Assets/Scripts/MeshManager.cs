@@ -6,8 +6,10 @@ public class MeshManager : MonoBehaviour
 {
 
     public float meshHeight = 1f;
-    public float posOffset = .04f;
+
     public float meshScaleMin = .1f;
+
+    public float posOffset = .04f;
 
     public int numOfBuildings = 20;
     private int tempBuildingNum;
