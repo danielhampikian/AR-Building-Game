@@ -92,5 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee820697b1be8d24fa5b0fede74c7685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingMaterial: {fileID: 2100000, guid: 2fcbf43501e620a479612c7bf06bdf89, type: 2}
   meshManager: {fileID: 6706032865373037171, guid: 53ffd1e1504c0794f8057a6add6f583d,
     type: 3}

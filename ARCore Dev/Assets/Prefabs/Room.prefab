@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshHeight: 0.1
   meshScaleMin: 0.1
-  numOfBuildings: 20
+  numOfBuildings: 30
   meshZScale: 0.01
   meshXScale: 0.01
   buildingPrefab: {fileID: 6742694079643174286, guid: 1462b247647b456448937f6b2d80361c,

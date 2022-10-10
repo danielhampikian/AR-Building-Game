@@ -6,7 +6,7 @@ public class MeshManager : MonoBehaviour
 {
 
     public float meshHeight = 1f;
-
+    public float posOffset = .04f;
     public float meshScaleMin = .1f;
 
     public int numOfBuildings = 20;
@@ -36,8 +36,8 @@ public class MeshManager : MonoBehaviour
         }
 
         for(int i = 0; i < numOfBuildings; i++) {
-            float x = Random.Range(transform.position.x - .03f, transform.position.x + .03f);
-            float z = Random.Range(transform.position.z - .03f, transform.position.z + .03f);
+            float x = Random.Range(transform.position.x - posOffset, transform.position.x + posOffset);
+            float z = Random.Range(transform.position.z - posOffset, transform.position.z + posOffset);
 
             Vector3 pos = new Vector3(x, transform.position.y + .05f, z);
 
