@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ResourceManagerScript : MonoBehaviour
 {
-    //Resources Start at 100
+    //Resources Start at 100 Note from Brendon: I've changed the resource values to be different than 100 so that it makes the gameplay more challenging
     //I am by no means good at this, but this is what I could come up with. There are undoubtedly more elegent soluions but this is what I have come up, by all means adjust to fit what should be done.
-    int energy = 100;
-    int happiness = 100;
-    int food = 100;
-    int society = 100;
+    int energy = 30;
+    int happiness = 30;
+    int food = 30;
+    int society = 10;
 
     public GameObject buildingManager;
 
