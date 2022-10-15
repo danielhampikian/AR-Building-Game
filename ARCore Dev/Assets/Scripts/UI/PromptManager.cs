@@ -31,20 +31,16 @@ public class PromptManager : MonoBehaviour
 
     void NewPrompt()
     {
-        Debug.Log(storyPrompts[0]);   
-        Debug.Log(storyPrompts[1]);
         promptIndex = Random.Range(0, storyPrompts.Count);
-        Debug.Log(promptIndex);
         prompt = prompt.GetComponent<TMP_Text>();
         prompt.text = storyPrompts[promptIndex];
         storyPrompts.Remove(storyPrompts[promptIndex]);
+        promptIndex += 1;
         UpdateButtons();
     }
 
     void UpdateButtons ()
     {
-        promptIndex += 1;
-
         switch (promptIndex)
         {
         case 2:
@@ -69,8 +65,6 @@ public class PromptManager : MonoBehaviour
     } 
     public void Consequenses (int option)
     {
-        promptIndex += 1;
-
         switch (promptIndex)
         {
         case 2:
