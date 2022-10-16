@@ -39,7 +39,7 @@ public class PromptManager : MonoBehaviour
         
     }
 
-    void NewPrompt()
+    public void NewPrompt()
     {
         promptIndex = Random.Range(0, storyPrompts.Count);
         prompt = prompt.GetComponent<TMP_Text>();

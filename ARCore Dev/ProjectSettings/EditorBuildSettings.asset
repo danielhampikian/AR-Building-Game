@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameLoop.unity
     guid: 32cb19700da3b61498ac11b4846d25cc
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 7c2dfdeebe5a2d74a8b9d01bdf6caccb
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 7a74bd5d112e272478ff8336d15701e8
   m_configObjects:
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 97244299f80739843859ea90ebc3bacb,
       type: 2}
