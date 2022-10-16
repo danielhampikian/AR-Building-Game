@@ -18,6 +18,7 @@ public class PromptManager : MonoBehaviour
     public GameObject buttonText1;
     public GameObject buttonText2;
     private int promptIndex;
+    
 
     // Start is called before the first frame update
     void Start()
