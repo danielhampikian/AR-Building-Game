@@ -3261,6 +3261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingManager: {fileID: 475101696}
+  promptBackground: {fileID: 1860924597}
+  buttonBad: {fileID: 2013401859}
+  buttonGood: {fileID: 333247117}
+  exclamation: {fileID: 1926489942}
+  promptManager: {fileID: 907596916}
 --- !u!4 &2005728008
 Transform:
   m_ObjectHideFlags: 0
