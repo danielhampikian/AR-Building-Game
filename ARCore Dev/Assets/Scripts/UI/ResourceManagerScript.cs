@@ -12,26 +12,53 @@ public class ResourceManagerScript : MonoBehaviour
     int happiness = 30;
     int food = 30;
     int society = 10;
+    int turns = 0;
+    float timer;
 
     public GameObject buildingManager;
 
+    //originally I had a manager script and object for this but I do not remember how to properly send the timer value to that script. So I just moved everything over here
+    //everything mean these objects, the stuff in start, update and the UIactive functions
+    public GameObject promptBackground;
+    public GameObject buttonBad;
+    public GameObject buttonGood;
+    public GameObject exclamation;
+
     void Start()
     {
-
+        SetUIInactive();
+        timer = 10f;
     }
 
     void Update()
     {
-        
+        if (timer >= 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            SetUIActive();
+        }
     }
     //on screen there is a left button and a right button, I am calling them good and bad respectively depending on which button they push the same process occurs but the "bad" button is negative
+    //they also increment the turns value, progressing the player to the victory condition
     public void goodButton()
     {
         ChangeManager("positive");
+        turns += 1;
+        GameWinCheck(turns);
+        timer = 20f;
+        SetUIInactive();
     }
     public void badButton()
     {
         ChangeManager("negative");
+        turns += 1;
+        GameWinCheck(turns);
+        timer = 20f;
+        SetUIInactive();
+
     }
     public void ChangeManager(string goodBad)
     {
@@ -97,6 +124,28 @@ public class ResourceManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+    }
+    public void GameWinCheck(int recievedTurnsValue)
+    {
+        if(recievedTurnsValue >= 10)
+        {
+            SceneManager.LoadScene("Win");
+        }
+    }
+
+    private void SetUIInactive()
+    {
+        promptBackground.SetActive(false);
+        buttonBad.SetActive(false);
+        buttonGood.SetActive(false);
+        exclamation.SetActive(false);
+    }
+    private void SetUIActive()
+    {
+        promptBackground.SetActive(true);
+        buttonBad.SetActive(true);
+        buttonGood.SetActive(true);
+        exclamation.SetActive(true);
     }
 
 }
