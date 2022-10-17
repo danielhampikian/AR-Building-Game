@@ -2311,6 +2311,12 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717712724}
   m_Enabled: 1
+--- !u!1 &788853794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5929635334278884545, guid: e8e2c9399e6f37e459b302075f7f023a,
+    type: 3}
+  m_PrefabInstance: {fileID: 222733002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &907596916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2749,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449880671}
   m_CullTransparentMesh: 0
+--- !u!1 &1560219618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9022917656512101001, guid: e8e2c9399e6f37e459b302075f7f023a,
+    type: 3}
+  m_PrefabInstance: {fileID: 222733002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1565363593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,6 +3318,9 @@ MonoBehaviour:
   buttonGood: {fileID: 333247117}
   exclamation: {fileID: 1926489942}
   promptManager: {fileID: 907596916}
+  gator1: {fileID: 2024649112}
+  gator2: {fileID: 1560219618}
+  gator3: {fileID: 788853794}
 --- !u!4 &2005728008
 Transform:
   m_ObjectHideFlags: 0
@@ -3450,3 +3465,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013401859}
   m_CullTransparentMesh: 0
+--- !u!1 &2024649112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7478507938623571981, guid: e8e2c9399e6f37e459b302075f7f023a,
+    type: 3}
+  m_PrefabInstance: {fileID: 222733002}
+  m_PrefabAsset: {fileID: 0}

@@ -24,7 +24,7 @@ public class ResourceManagerScript : MonoBehaviour
     public GameObject buttonGood;
     public GameObject exclamation;
     public GameObject promptManager;
-
+    public GameObject gator1, gator2, gator3;
     void Start()
     {
         SetUIInactive();
@@ -147,6 +147,30 @@ public class ResourceManagerScript : MonoBehaviour
         if(recievedTurnsValue >= 10)
         {
             SceneManager.LoadScene("Win");
+        }
+    }
+
+    public void GaterChange()
+    {
+        if(happiness >= 21 & energy >= 21 & food >= 21 & society >= 21 )
+        {
+            gator1.SetActive(true);
+            gator2.SetActive(false);
+            gator3.SetActive(false);
+        }
+
+        if (happiness >= 11 & energy >= 11 & food >= 11 & society >= 11)
+        {
+            gator1.SetActive(false);
+            gator2.SetActive(true);
+            gator3.SetActive(false);
+        }
+
+        if (happiness <= 10 & energy <= 10 & food <= 10 & society <= 10)
+        {
+            gator1.SetActive(false);
+            gator2.SetActive(false);
+            gator3.SetActive(true);
         }
     }
 
