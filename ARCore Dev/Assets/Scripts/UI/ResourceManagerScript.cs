@@ -45,6 +45,8 @@ public class ResourceManagerScript : MonoBehaviour
         {
             SetUIActive();
         }
+
+        GatorChange();
     }
     //on screen there is a left button and a right button, I am calling them good and bad respectively depending on which button they push the same process occurs but the "bad" button is negative
     //they also increment the turns value, progressing the player to the victory condition
@@ -151,34 +153,30 @@ public class ResourceManagerScript : MonoBehaviour
         }
     }
 
-    public void GaterChange()
+    public void GatorChange()
     {
-        if(HappinessCounter.happinessAmount >= 100 & EnergyCounter.energyAmount >= 100 & FoodCounter.foodAmount >= 100 & SocietyCounter.societyAmount >= 100 )
+        if(HappinessCounter.happinessAmount >= 100)
         {
             gator1.SetActive(true);
             gator2.SetActive(false);
             gator3.SetActive(false);
         }
 
-        Debug.Log(gator1);
-
-        if (HappinessCounter.happinessAmount >= 91 & EnergyCounter.energyAmount >= 91 & FoodCounter.foodAmount >= 91 & SocietyCounter.societyAmount >= 91)
+        else
         {
             gator1.SetActive(false);
             gator2.SetActive(true);
             gator3.SetActive(false);
         }
 
-        Debug.Log(gator2);
 
-        if (HappinessCounter.happinessAmount <= 90 & EnergyCounter.energyAmount <= 90 & FoodCounter.foodAmount <= 90 & SocietyCounter.societyAmount <= 90)
+        if (EnergyCounter.energyAmount <= 90)
         {
             gator1.SetActive(false);
             gator2.SetActive(false);
             gator3.SetActive(true);
         }
 
-        Debug.Log(gator3);
     }
 
     private void SetUIInactive()
