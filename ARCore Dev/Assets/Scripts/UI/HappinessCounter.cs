@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HappinessCounter : MonoBehaviour
 {
     Text happinessText;
-    public static int happinessAmount = 100;
+    public static int happinessAmount = 30;
     void Start()
     {
         happinessText = GetComponent<Text>();

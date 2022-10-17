@@ -8,7 +8,7 @@ public class EnergyCounter : MonoBehaviour
     //This is what I know works for displaying values accurately on the screen. There are probably several other ways to do this, each one more efficient/elegant than mine. by all means replace or alter my work
     //each counter script is set up in an indentical manner, each attached to its respective resource. Their purpose is to be fed values from the ResourceManagerScript and display them
     Text energyText;
-    public static int energyAmount = 100;
+    public static int energyAmount = 30;
     void Start()
     {
         energyText = GetComponent<Text>();

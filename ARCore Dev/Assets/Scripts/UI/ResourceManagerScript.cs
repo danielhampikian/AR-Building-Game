@@ -8,14 +8,16 @@ public class ResourceManagerScript : MonoBehaviour
 {
     //Resources Start at 100 Note from Brendon: I've changed the resource values to be different than 100 so that it makes the gameplay more challenging
     //I am by no means good at this, but this is what I could come up with. There are undoubtedly more elegent soluions but this is what I have come up, by all means adjust to fit what should be done.
-    int energy = 30;
-    int happiness = 30;
-    int food = 30;
-    int society = 10;
+    int energy = 50;
+    int happiness = 50;
+    int food = 50;
+    int society = 50;
     int turns;
     float timer;
 
     public GameObject buildingManager;
+    public GameObject light1;
+    public GameObject light2;
 
     //originally I had a manager script and object for this but I do not remember how to properly send the timer value to that script. So I just moved everything over here
     //everything mean these objects, the stuff in start, update and the UIactive functions
@@ -48,6 +50,129 @@ public class ResourceManagerScript : MonoBehaviour
 
         GatorChange();
     }
+
+    //------------------------------------------------------------------------
+    //Change Resource Value 
+    public void ChangeEnergyValue(int promptConsequense)
+    {
+        //the decided value is taken and modified(or not) and sent to the various counter scripts managing the on screen display.
+        EnergyCounter.energyAmount += promptConsequense;
+        energy += promptConsequense;
+        //after the numbers are changed, their values are passed to the GameLossCheck function, which will determine if they are below zero, prompting a change in scene if they have lost
+        GameLossCheck(EnergyCounter.energyAmount);
+    }
+    public void ChangeHappinessValue(int promptConsequense)
+    {
+        HappinessCounter.happinessAmount += promptConsequense;
+        happiness += promptConsequense;
+        GameLossCheck(HappinessCounter.happinessAmount);
+    }
+    public void ChangeFoodValue(int promptConsequense)
+    {
+        FoodCounter.foodAmount += promptConsequense;
+        food += promptConsequense;
+        GameLossCheck(FoodCounter.foodAmount);
+    }
+    public void ChangeSocietyValue(int promptConsequense)
+    {
+        SocietyCounter.societyAmount += promptConsequense;
+        society += promptConsequense;
+        GameLossCheck(SocietyCounter.societyAmount);
+    }
+    //------------------------------------------------------------------------
+
+
+
+    //------------------------------------------------------------------------
+    //Check for win or
+    public void GameLossCheck(int recievedValue)
+    {
+        if (recievedValue <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        } else {
+            timer += 3f;
+            turns += 1;
+
+            SetUIInactive();
+            GameWinCheck(turns);
+            promptManager.GetComponent<PromptManager>().NewPrompt();
+        }
+    }
+
+    public void GameWinCheck(int recievedTurnsValue)
+    {
+        if(recievedTurnsValue >= 10)
+        {
+            SceneManager.LoadScene("Win");
+        }
+    }
+
+
+    //------------------------------------------------------------------------
+    //Change Gator Model
+    public void GatorChange()
+    {
+        if(HappinessCounter.happinessAmount >= 30 && EnergyCounter.energyAmount >= 10)
+        {
+            gator1.SetActive(true);
+            gator2.SetActive(false);
+            gator3.SetActive(false);
+        } else {
+            gator1.SetActive(false);
+            gator2.SetActive(true);
+            gator3.SetActive(false);
+        }
+
+
+        if (EnergyCounter.energyAmount <= 10)
+        {
+            gator1.SetActive(false);
+            gator2.SetActive(false);
+            gator3.SetActive(true);
+            light1.SetActive(false);
+            light2.SetActive(false);
+        } else {
+            gator1.SetActive(true);
+            gator2.SetActive(false);
+            gator3.SetActive(false);
+            light1.SetActive(true);
+            light2.SetActive(true);
+        }
+
+    }
+
+    private void SetUIInactive()
+    {
+        promptBackground.SetActive(false);
+        buttonBad.SetActive(false);
+        buttonGood.SetActive(false);
+        exclamation.SetActive(false);
+    }
+    private void SetUIActive()
+    {
+        promptBackground.SetActive(true);
+        buttonBad.SetActive(true);
+        buttonGood.SetActive(true);
+        exclamation.SetActive(true);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    //Unused code placed at bottom to be out of the way
+
+
     //on screen there is a left button and a right button, I am calling them good and bad respectively depending on which button they push the same process occurs but the "bad" button is negative
     //they also increment the turns value, progressing the player to the victory condition
     //public void goodButton()
@@ -99,99 +224,3 @@ public class ResourceManagerScript : MonoBehaviour
     //        Debug.Log("Random Value is" + randomNumberValue);
     //    }
     //}
-    public void ChangeEnergyValue(int randomNumberValue)
-    {
-        //the decided value is taken and modified(or not) and sent to the various counter scripts managing the on screen display.
-        EnergyCounter.energyAmount += randomNumberValue;
-        energy += randomNumberValue;
-        Debug.Log("Energy: " + energy);
-        //after the numbers are changed, their values are passed to the GameLossCheck function, which will determine if they are below zero, prompting a change in scene if they have lost
-        GameLossCheck(energy);
-    }
-    public void ChangeHappinessValue(int randomNumberValue)
-    {
-        HappinessCounter.happinessAmount += randomNumberValue;
-        happiness += randomNumberValue;
-        Debug.Log("Happiness: " + happiness);
-        GameLossCheck(happiness);
-    }
-    public void ChangeFoodValue(int randomNumberValue)
-    {
-        FoodCounter.foodAmount += randomNumberValue;
-        food += randomNumberValue;
-        Debug.Log("Food: " + food);
-        GameLossCheck(food);
-    }
-    public void ChangeSocietyValue(int randomNumberValue)
-    {
-        SocietyCounter.societyAmount += randomNumberValue;
-        society += randomNumberValue;
-        Debug.Log("Society: " + society);
-        GameLossCheck(society);
-    }
-    public void GameLossCheck(int recievedValue)
-    {
-        timer += 3f;
-        turns += 1;
-
-        SetUIInactive();
-        GameWinCheck(turns);
-        promptManager.GetComponent<PromptManager>().NewPrompt();
-        Debug.Log("New Prompt Called");
-        
-        if (recievedValue <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-    }
-    public void GameWinCheck(int recievedTurnsValue)
-    {
-        Debug.Log("turns" + turns);
-        if(recievedTurnsValue >= 10)
-        {
-            SceneManager.LoadScene("Win");
-        }
-    }
-
-    public void GatorChange()
-    {
-        if(HappinessCounter.happinessAmount >= 100)
-        {
-            gator1.SetActive(true);
-            gator2.SetActive(false);
-            gator3.SetActive(false);
-        }
-
-        else
-        {
-            gator1.SetActive(false);
-            gator2.SetActive(true);
-            gator3.SetActive(false);
-        }
-
-
-        if (EnergyCounter.energyAmount <= 90)
-        {
-            gator1.SetActive(false);
-            gator2.SetActive(false);
-            gator3.SetActive(true);
-        }
-
-    }
-
-    private void SetUIInactive()
-    {
-        promptBackground.SetActive(false);
-        buttonBad.SetActive(false);
-        buttonGood.SetActive(false);
-        exclamation.SetActive(false);
-    }
-    private void SetUIActive()
-    {
-        promptBackground.SetActive(true);
-        buttonBad.SetActive(true);
-        buttonGood.SetActive(true);
-        exclamation.SetActive(true);
-    }
-
-}

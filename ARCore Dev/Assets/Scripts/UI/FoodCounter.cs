@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FoodCounter : MonoBehaviour
 {
     Text foodText;
-    public static int foodAmount = 100;
+    public static int foodAmount = 30;
     void Start()
     {
         foodText = GetComponent<Text>();

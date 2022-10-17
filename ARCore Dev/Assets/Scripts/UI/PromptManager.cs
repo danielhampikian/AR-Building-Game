@@ -142,14 +142,18 @@ public class PromptManager : MonoBehaviour
             if (option == 1)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += -30;
+                }
             }
             break;
         case 11:
@@ -158,12 +162,18 @@ public class PromptManager : MonoBehaviour
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeFoodValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 10) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += 10;
+
+                    buildingManager.GetComponent<BuildingManager>().buildingX += .2f;
+                    buildingManager.GetComponent<BuildingManager>().buildingZ += .2f;
+                }
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             break;
         case 10:
@@ -171,12 +181,18 @@ public class PromptManager : MonoBehaviour
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += 30;
+
+                    buildingManager.GetComponent<BuildingManager>().buildingX += .2f;
+                    buildingManager.GetComponent<BuildingManager>().buildingZ += .2f;
+                }
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             break;
         case 9:
@@ -185,26 +201,41 @@ public class PromptManager : MonoBehaviour
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeFoodValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
+
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += -30;
+                }
+
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 10) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += 10;
+                    
+                    buildingManager.GetComponent<BuildingManager>().buildingX += .2f;
+                    buildingManager.GetComponent<BuildingManager>().buildingZ += .2f;
+                }
             }
             break;
         case 8:
             if (option == 1)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += 30;
+                }
             }
             break;
         case 7:
@@ -212,38 +243,47 @@ public class PromptManager : MonoBehaviour
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += -30;
+                }
             }
             break;
         case 6:
             if (option == 1)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             break;
         case 5:
             if (option == 1)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeFoodValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += -30;
+
+                    buildingManager.GetComponent<BuildingManager>().buildingX += -.1f;
+                    buildingManager.GetComponent<BuildingManager>().buildingZ += -.1f;
+                }
             }
             break;
         case 4:
@@ -251,12 +291,15 @@ public class PromptManager : MonoBehaviour
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeFoodValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 10) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += 10;
+                }
             }
             break;
         case 3:
@@ -264,37 +307,44 @@ public class PromptManager : MonoBehaviour
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
+                buildingManager.GetComponent<BuildingManager>().buildingX += -.1f;
+                buildingManager.GetComponent<BuildingManager>().buildingZ += -.1f;
             }
             break;
         case 2:
             if (option == 1)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(-10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += -1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += -.4f;
+                if (buildingManager.GetComponent<BuildingManager>().numOfBuildings >= 30) {
+                    buildingManager.GetComponent<BuildingManager>().numOfBuildings += -30;
+                    buildingManager.GetComponent<BuildingManager>().buildingX += -.1f;
+                    buildingManager.GetComponent<BuildingManager>().buildingZ += -.1f;
+                }
             }
             break;
         case 1:
             if (option == 1)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeHappinessValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
             }
             else if (option == 2)
             {
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeEnergyValue(-10);
                 resourceManager.GetComponent<ResourceManagerScript>().ChangeSocietyValue(10);
-                buildingManager.GetComponent<BuildingManager>().buildingHeight += 1f;
+                buildingManager.GetComponent<BuildingManager>().buildingHeight += 0.4f;
             }
             break;
         default:
