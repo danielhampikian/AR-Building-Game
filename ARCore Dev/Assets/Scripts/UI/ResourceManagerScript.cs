@@ -25,6 +25,7 @@ public class ResourceManagerScript : MonoBehaviour
     public GameObject exclamation;
     public GameObject promptManager;
     public GameObject gator1, gator2, gator3;
+
     void Start()
     {
         SetUIInactive();
@@ -152,26 +153,32 @@ public class ResourceManagerScript : MonoBehaviour
 
     public void GaterChange()
     {
-        if(happiness >= 21 & energy >= 21 & food >= 21 & society >= 21 )
+        if(HappinessCounter.happinessAmount >= 100 & EnergyCounter.energyAmount >= 100 & FoodCounter.foodAmount >= 100 & SocietyCounter.societyAmount >= 100 )
         {
             gator1.SetActive(true);
             gator2.SetActive(false);
             gator3.SetActive(false);
         }
 
-        if (happiness >= 11 & energy >= 11 & food >= 11 & society >= 11)
+        Debug.Log(gator1);
+
+        if (HappinessCounter.happinessAmount >= 91 & EnergyCounter.energyAmount >= 91 & FoodCounter.foodAmount >= 91 & SocietyCounter.societyAmount >= 91)
         {
             gator1.SetActive(false);
             gator2.SetActive(true);
             gator3.SetActive(false);
         }
 
-        if (happiness <= 10 & energy <= 10 & food <= 10 & society <= 10)
+        Debug.Log(gator2);
+
+        if (HappinessCounter.happinessAmount <= 90 & EnergyCounter.energyAmount <= 90 & FoodCounter.foodAmount <= 90 & SocietyCounter.societyAmount <= 90)
         {
             gator1.SetActive(false);
             gator2.SetActive(false);
             gator3.SetActive(true);
         }
+
+        Debug.Log(gator3);
     }
 
     private void SetUIInactive()
