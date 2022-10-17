@@ -113,14 +113,14 @@ public class ResourceManagerScript : MonoBehaviour
     //Change Gator Model
     public void GatorChange()
     {
-        if(HappinessCounter.happinessAmount >= 30 && EnergyCounter.energyAmount >= 10)
+        if(HappinessCounter.happinessAmount <= 30 && EnergyCounter.energyAmount >= 10)
         {
-            gator1.SetActive(true);
-            gator2.SetActive(false);
-            gator3.SetActive(false);
-        } else {
             gator1.SetActive(false);
             gator2.SetActive(true);
+            gator3.SetActive(false);
+        } else {
+            gator1.SetActive(true);
+            gator2.SetActive(false);
             gator3.SetActive(false);
         }
 
